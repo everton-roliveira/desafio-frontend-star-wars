@@ -1,0 +1,18 @@
+<table *ngIf="properties.body && properties.body.length" class="table">
+    <thead>
+      <tr class="text-align-{{config.textAlign}}">
+        <th *ngFor="let head of properties.head; let i = index"
+          [class.text-align-left]="config.headerTextAlignLastColumn === 'left' && i === (properties.head.length - 1)"
+          [class.text-align-rigth]="config.headerTextAlignLastColumn === 'rigth' && i === (properties.head.length - 1)"
+          [class.text-align-center]="config.headerTextAlignLastColumn === 'center' && i === (properties.head.length - 1)"
+          >
+          {{ head }}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of properties.body" class="text-align-{{config.textAlign}}">
+        <ng-template [ngTemplateOutlet]="tableRow" [ngTemplateOutletContext]="{ $implicit: item }"></ng-template>
+      </tr>
+    </tbody>
+  </table>

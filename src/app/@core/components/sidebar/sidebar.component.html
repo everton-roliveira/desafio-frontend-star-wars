@@ -33,15 +33,15 @@
                 </h3>
             </article>
             <article class="sidebar__scroll__links" [ngClass]="{'sidebar__scroll__links--has-auto': hasFixedProfile}">
-                <a 
-                    class="sidebar__scroll__links__link">
-                    <i class="icon ion-md-speedometer"></i>
-                    <span>Dashboard</span> <!-- [routerLink]="['/dashboard']" routerLinkActive="sidebar__scroll__links__link--active" -->
+                <a class="sidebar__scroll__links__link" [routerLink]="['/game']"
+                    routerLinkActive="sidebar__scroll__links__link--active">
+                    <i class="fab fa-jedi-order"></i>
+                    <span>Game</span>
                 </a>
-                <a 
-                    class="sidebar__scroll__links__link">
-                    <i class="icon ion-md-person"></i>
-                    <span>Usuários</span> <!-- [routerLink]="['/user']" routerLinkActive="sidebar__scroll__links__link--active" -->
+                <a class="sidebar__scroll__links__link" [routerLink]="['/planets']"
+                    routerLinkActive="sidebar__scroll__links__link--active">
+                    <i class="fab fa-galactic-republic"></i>
+                    <span>Planetas</span>
                 </a>
             </article>
         </section>
