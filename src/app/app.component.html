@@ -1,1 +1,22 @@
-<router-outlet></router-outlet>
+<section class="container-full">
+    <section class="d-flex">
+        <app-sidebar [menuOpen]="menuOpen"></app-sidebar>
+        <section class="container-body">
+            <header class="container-body__header">
+                <a class="container-body__header__btn" (click)="menuOpen = !menuOpen">
+                    <i class="fas fa-indent" [ngClass]="{'closed': !menuOpen}"></i>
+                </a>
+                <form class="container-body__header__container-search">
+                    <i class="fas fa-search"></i>
+                    <input type="text" name="search" id="search" placeholder="Pesquisar..." autocomplete="off">
+                </form>
+                <a class="container-body__header__btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                </a>
+            </header>
+            <main class="container-body__main">
+                <router-outlet></router-outlet>
+            </main>
+        </section>
+    </section>
+</section>

@@ -1,0 +1,52 @@
+<nav [ngStyle]="{'width': menuOpen ? '230px' : '0'}">
+    <section class="sidebar">
+        <header class="sidebar__logo">
+            <a href="#"></a>
+        </header>
+        <section class="sidebar__scroll" [ngClass]="{'has-scroll-auto': !hasFixedProfile}">
+            <article class="sidebar__scroll__profile">
+                <div class="sidebar__scroll__profile__pin"
+                    [ngClass]="{'sidebar__scroll__profile__pin--rotate-90': hasFixedProfile}">
+                    <i class="fas fa-thumbtack" (click)="fixedProfile()"></i>
+                </div>
+                <article class="sidebar__scroll__profile__icons">
+                    <div class="sidebar__scroll__profile__icons__control">
+                        <a>
+                            <i class="far fa-bell"></i>
+                            <span class="profile__controls__left"
+                                *ngIf="notify != null && notify > 0">{{ notify <= 99? notify : '+99' }}</span>
+                        </a>
+                    </div>
+                    <div class="sidebar__scroll__profile__icons__img">
+                        <img src="{{ user.avatar }}" alt="imagem do usuário logado no sistema">
+                    </div>
+                    <div class="sidebar__scroll__profile__icons__control">
+                        <a>
+                            <i class="fas fa-envelope"></i>
+                            <span class="profile__controls__rigth"
+                                *ngIf="email != null && email > 0">{{ email <= 99? email : '+99' }}</span>
+                        </a>
+                    </div>
+                </article>
+                <h3 class="sidebar__scroll__profile__description">
+                    {{ user.name }}
+                </h3>
+            </article>
+            <article class="sidebar__scroll__links" [ngClass]="{'sidebar__scroll__links--has-auto': hasFixedProfile}">
+                <a 
+                    class="sidebar__scroll__links__link">
+                    <i class="icon ion-md-speedometer"></i>
+                    <span>Dashboard</span> <!-- [routerLink]="['/dashboard']" routerLinkActive="sidebar__scroll__links__link--active" -->
+                </a>
+                <a 
+                    class="sidebar__scroll__links__link">
+                    <i class="icon ion-md-person"></i>
+                    <span>Usuários</span> <!-- [routerLink]="['/user']" routerLinkActive="sidebar__scroll__links__link--active" -->
+                </a>
+            </article>
+        </section>
+        <footer>
+            <app-footer></app-footer>
+        </footer>
+    </section>
+</nav>

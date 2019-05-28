@@ -30,6 +30,13 @@
     }
 }
 
+.container-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
 /* linha */
 .row {
     margin-left: -5px;

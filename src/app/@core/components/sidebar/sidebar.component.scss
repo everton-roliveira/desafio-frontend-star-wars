@@ -1,0 +1,194 @@
+@import "../../../../assets/scss/main.scss";
+
+nav {
+    background: $color-dark-gray;
+    height: 100vh;
+    overflow: hidden;
+    transition: .20s ease;
+
+    .sidebar {
+        display: flex;
+        flex-flow: column nowrap;
+        height: 100%;
+
+        &__logo {
+            background: $color-dark-gray;
+            text-align: center;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+
+            a {
+                font-size: 1.56rem;
+                text-decoration: none;
+                width: 100%;
+                padding: 2px;
+                display: block;
+                height: 50px;
+                background-image: url(../../../../assets/images/sw_logo.png);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-origin: content-box;
+            }
+        }
+
+        &__scroll {
+            padding-bottom: 25px;
+            flex: 1;
+            display: flex;
+            flex-flow: column nowrap;
+
+            &__profile {
+                width: 100%;
+                min-height: 165px;
+                padding: 15px 10px;
+                position: relative;
+                background: $color-black-light;
+                display: flex;
+                flex-flow: column;
+                align-items: center;
+
+                &__icons {
+                    text-align: center;
+                    display: flex;
+                    width: 100%;
+                    justify-content: space-evenly;
+                    margin-bottom: 15px;
+
+                    &__img {
+                        width: 100px;
+                        height: 100px;
+                        border: 3px solid $color-white;
+                        border-radius: 20px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            border-radius: 20px;
+                        }
+                    }
+
+                    &__control {
+                        font-size: 1.0625rem;
+                        align-self: flex-end;
+
+                        a {
+                            position: relative;
+                            color: $color-white;
+                            display: flex;
+                            border: 2px solid;
+                            border-radius: 5px;
+                            justify-content: center;
+                            height: 30px;
+                            width: 30px;
+                            align-items: center;
+                            text-decoration: none;
+                            cursor: pointer;
+
+                            &:hover {
+                                border-color: #fff;
+                                color: #fff;
+                                transition-duration: .3s;
+                            }
+
+                            span {
+                                position: absolute;
+                                top: -15px;
+                                color: #fff;
+                                border-radius: 50%;
+                                font-size: 12px;
+                                font-weight: 700;
+                                width: 25px;
+                                height: 25px;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                            }
+
+                            .profile__controls__left {
+                                left: -15px;
+                                background: $color-red;
+                            }
+
+                            .profile__controls__rigth {
+                                right: -15px;
+                                background: $color-blue;
+                            }
+                        }
+                    }
+                }
+
+                &__description {
+                    color: $color-white;
+                    font-size: .875rem;
+                    font-weight: 500;
+                }
+
+                &__pin {
+                    position: absolute;
+                    right: 10px;
+                    bottom: 10px;
+                    color: $color-white;
+                    font-size: .9375rem;
+                    transition: 0.25s cubic-bezier(0.73, -0.66, 0.49, 1.78);
+
+                    i {
+                        cursor: pointer;
+                    }
+
+                    /* classe que irá girar meu pin */
+                    &--rotate-90 {
+                        transform: rotateZ(90deg);
+                    }
+                }
+            }
+
+            &__links {
+                flex: 1;
+
+                &__link {
+                    display: block;
+                    color: #8b91a0;
+                    font-size: .8125rem;
+                    padding: 15px 10px 15px 15px;
+                    border-bottom: 1px solid $color-black-light;
+                    cursor: pointer;
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+
+                    &:hover {
+                        background: lighten($color-dark-gray, 10%);
+                        background: #262a33;
+                        color: #fff;
+                        -webkit-transition: all 200ms ease;
+                        -moz-transition: all 200ms ease;
+                        -ms-transition: all 200ms ease;
+                        -o-transition: all 200ms ease;
+                        transition: all 200ms ease;
+                    }
+
+                    i {
+                        margin-right: 15px;
+                        font-size: 1.25rem;
+                    }
+
+                    &--active {
+                        color: $color-white;
+                        border-right: 5px solid $color-secundary;
+                    }
+                }
+            }
+        }
+
+        footer {
+            position: relative;
+        }
+    }
+}

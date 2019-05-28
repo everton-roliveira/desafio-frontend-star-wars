@@ -1,0 +1,13 @@
+@import '../../../../assets/scss/main';
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: $color-black-light;
+    z-index: 100;
+    width: 100%;
+    color: #8b91a0;
+    text-align: center;
+    font-size: .75rem;
+    padding: 5px;
+}
