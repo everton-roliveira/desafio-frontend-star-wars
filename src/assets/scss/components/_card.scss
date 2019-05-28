@@ -1,6 +1,6 @@
 .card {
   width: 700px;
-  color: #8b91a0;
+  color: $color-blue-gray;
   box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
   border-radius: 10px;
   &__header {
@@ -9,7 +9,7 @@
     font-weight: 600;
     text-align: center;
     padding: 15px 10px;
-    border-bottom: 2px solid $color-primary;
+    border-bottom: 2px solid $color-blue-gray;
   }
   &__body {
     padding: 20px;
