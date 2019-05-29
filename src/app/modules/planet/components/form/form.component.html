@@ -1,3 +1,56 @@
-<p>
-  form works!
-</p>
+<form [formGroup]="formPlanet" (ngSubmit)="onSubmit()" *ngIf="!loading; else loadingTemplate">
+  <div class="row">
+    <!-- Nome -->
+    <div class="grid-lg-12">
+      <div class="form__group">
+        <input type="hidden" formControlName="_id">
+        <input type="text" name="name" id="name" class="form__input" formControlName="name"
+          [ngClass]="{'active': formPlanet.get('name').value.length}" autocomplete="off">
+        <div class="slider-bottom"></div>
+        <label for="name" class="form__label">Nome</label>
+        <span class="msg-error" *ngIf="(formPlanet.controls['name'].errors?.required && (formPlanet.controls['name'].dirty || formPlanet.controls['name'].touched)) ||
+            (formPlanet.controls['name'].errors?.required && formInvalid)">campo
+          obrigatório</span>
+      </div>
+    </div>
+
+    <!-- Climate -->
+    <div class="grid-lg-12">
+      <div class="form__group">
+        <input type="text" name="climate" id="climate" class="form__input" formControlName="climate"
+          [ngClass]="{'active': formPlanet.get('climate').value.length}" autocomplete="off">
+        <div class="slider-bottom"></div>
+        <label for="climate" class="form__label">Clima</label>
+        <span class="msg-error" *ngIf="(formPlanet.controls['climate'].errors?.required && (formPlanet.controls['climate'].dirty || formPlanet.controls['climate'].touched)) ||
+            (formPlanet.controls['climate'].errors?.required && formInvalid)">campo
+          obrigatório</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+
+    <!-- Terrain -->
+    <div class="grid-lg-12">
+      <div class="form__group">
+        <input type="text" name="terrain" id="terrain" class="form__input" formControlName="terrain"
+          [ngClass]="{'active': formPlanet.get('terrain').value.length}" autocomplete="off">
+        <div class="slider-bottom"></div>
+        <label for="terrain" class="form__label">Terreno</label>
+        <span class="msg-error" *ngIf="(formPlanet.controls['terrain'].errors?.required && (formPlanet.controls['terrain'].dirty || formPlanet.controls['terrain'].touched)) ||
+              (formPlanet.controls['terrain'].errors?.required && formInvalid)">campo
+          obrigatório</span>
+      </div>
+    </div>
+
+  </div>
+  <div class="d-flex justify-content-center m-t-30">
+    <button class="btn btn--cancel m-r-10" type="button" (click)="cancel()">Cancelar</button>
+    <button class="btn btn--add m-l-10" type="submit">Salvar</button>
+  </div>
+</form>
+<ng-template #loadingTemplate>
+  <div class="d-flex justify-content-center">
+    Carregando...
+  </div>
+</ng-template>

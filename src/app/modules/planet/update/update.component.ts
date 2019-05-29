@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-update',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UpdateComponent implements OnInit {
 
-  constructor() { }
+  public idPlanet: string;
+  constructor(
+    private _activatedRouter: ActivatedRoute,
+    private _router: Router
+  ) { }
 
   ngOnInit() {
+    this.idPlanet = this._activatedRouter.snapshot.params['id'];
   }
 
 }

@@ -7,11 +7,11 @@ export class PlanetModel {
     films: number;
 
     constructor() {
-        this._id = null;
-        this.population = null;
-        this.name = null;
-        this.climate = null;
-        this.terrain = null;
-        this.films = null;
+        this._id = '';
+        this.population = '';
+        this.name = '';
+        this.climate = '';
+        this.terrain = '';
+        this.films = 0;
     }
 }

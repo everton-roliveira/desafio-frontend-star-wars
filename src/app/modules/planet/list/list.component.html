@@ -1,0 +1,31 @@
+  <div class="container-btn-add">
+    <a [routerLink]="[ 'create' ]" class="btn btn--add">Adicionar</a>
+  </div>
+  <app-table [properties]="table" [config]="configTable" *ngIf="!loading; else loadingTemplate">
+    <ng-template let-planet>
+      <td>{{ planet?.name }}</td>
+      <td class="column-action">
+        <div class="column-action__container">
+          <a class="btn btn--edit" [routerLink]="[ 'update', planet?._id ]">
+            <i class="fas fa-pen"></i>
+          </a>
+          <a class="btn btn--delete" (click)="delete(planet?._id)">
+            <i class="fas fa-trash-alt"></i>
+          </a>
+        </div>
+      </td>
+    </ng-template>
+  </app-table>
+  <ng-template #loadingTemplate>
+    <div class="d-flex justify-content-center">
+      Carregando...
+    </div>
+  </ng-template>
+
+  <!-- <section class="d-flex justify-content-center">
+    <section class="card">
+      <article class="card__body">
+
+      </article>
+    </section>
+  </section> -->

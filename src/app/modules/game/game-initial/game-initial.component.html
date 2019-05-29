@@ -1,0 +1,25 @@
+<section class="d-flex justify-content-center">
+  <section class="card">
+    <header class="card__header">
+      Buscar Planeta
+    </header>
+    <article class="card__body">
+      <div class="container-btn">
+        <a class="btn btn--add" (click)="openSearch = true">Buscar por Nome</a>
+        <a class="btn btn--add" (click)="getPlanetAleatory()">Buscar Aleatório</a>
+      </div>
+      <div class="container-search" *ngIf="openSearch">
+        <div class="grid-lg-12">
+          <div class="form__group">
+            <input type="text" name="terrain" id="terrain" class="form__input" autocomplete="off"
+              (keyup)="onKeyUp($event.target.value)" [(ngModel)]="planet.name" placeholder="Nome do Planeta">
+            <div class="slider-bottom"></div>
+            <div class="form__group__auto-complete" *ngIf="planets && planets.length > 0">
+              <li *ngFor="let item of planets" [routerLink]="['/game/', item._id]">{{item.name}}</li>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+  </section>
+</section>

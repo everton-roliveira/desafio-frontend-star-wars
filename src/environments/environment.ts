@@ -6,7 +6,7 @@ export const environment = {
   version: '0.0.1',
   production: false,
 
-  api_url: 'localhost:3000'
+  api_url: 'http://localhost:3000'
 };
 
 /*

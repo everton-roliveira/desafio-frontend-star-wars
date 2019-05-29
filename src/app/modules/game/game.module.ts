@@ -1,14 +1,17 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-
+import { NgModule } from '@angular/core';
+import { GameExampleComponent } from './game-example/game-example.component';
+import { GameInitialComponent } from './game-initial/game-initial.component';
 import { GameRoutingModule } from './game-routing.module';
-import { GameComponent } from './game.component';
+import { FormsModule } from '@angular/forms';
+
+
 
 @NgModule({
-  declarations: [GameComponent],
+  declarations: [GameInitialComponent, GameExampleComponent],
   imports: [
     CommonModule,
+    FormsModule,
     GameRoutingModule
   ]
 })

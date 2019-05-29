@@ -72,7 +72,7 @@
     border-color: $primary;
     color: $primary;
 
-    &:hover {
+    &:hover:not(:disabled) {
         background: $primary;
         color: $secundary;
     }

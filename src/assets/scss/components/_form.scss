@@ -1,0 +1,133 @@
+input:-webkit-autofill {
+  background-color: $color-white !important;
+  background-image: none !important;
+  color: $color-gray !important;
+  -webkit-box-shadow: 0 0 0 30px $color-white inset;
+  -webkit-text-fill-color: $color-gray !important;
+}
+
+.form {
+  text-align: center;
+
+  &__group {
+    padding-bottom: 30px;
+    position: relative;
+
+    &--big {
+      max-width: 600px;
+    }
+
+    .slider-bottom {
+      position: absolute;
+      left: 0;
+      height: 2px;
+      width: 0%;
+      -webkit-transition: width 0.8s ease;
+      -moz-transition: width 0.8s ease;
+      transition: width 0.5s ease;
+      z-index: 1;
+      bottom: 30px;
+    }
+
+    .msg-error {
+      color: $color-red;
+      font-size: 0.75rem;
+      position: absolute;
+      right: 0;
+      margin-top: 5px;
+
+      ~ .slider-bottom {
+        background-color: $color-red;
+        width: 100%;
+      }
+    }
+
+    &__auto-complete {
+      position: absolute;
+      margin-top: 0px;
+      width: 100%;
+      border-left: 1px solid;
+      border-right: 1px solid;
+      border-bottom: 1px solid;
+      background: #fff;
+      box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
+      li {
+        padding: 10px 5px;
+        cursor: pointer;
+        &:hover {
+          background: lighten($color-blue-gray, 30);
+        }
+      }
+    }
+  }
+
+  &__label {
+    display: block;
+    max-width: 300px;
+    text-align: left;
+    font-size: 14px;
+    color: $color-gray;
+    top: 0px;
+    position: relative;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    position: absolute;
+  }
+
+  &__invalid {
+    display: none;
+    position: absolute;
+    bottom: 14px;
+    right: 0;
+    color: $color-red;
+    font-size: 12px;
+  }
+
+  &__input {
+    display: block;
+    background-color: transparent;
+    color: $color-gray;
+    border-bottom: 2px solid $color-gray;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    width: 100%;
+    border-bottom: 2px solid $color-gray;
+    position: relative;
+    z-index: 1;
+    padding-bottom: 2px;
+    &::-webkit-input-placeholder {
+      color: lighten($color-blue-gray, 20);
+    }
+
+    &.active,
+    &:focus {
+      ~ .slider-bottom {
+        background-color: $color-blue;
+        width: 100%;
+      }
+
+      ~ .form__label {
+        color: $color-blue;
+        top: -15px;
+        font-size: 12px;
+      }
+    }
+
+    &.ng-dirty {
+      &.ng-invalid {
+        &:not(:focus) {
+          ~ .form__label {
+            color: $color-red;
+          }
+
+          ~ .slider-bottom {
+            background-color: $color-red;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

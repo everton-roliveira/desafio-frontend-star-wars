@@ -1,0 +1,16 @@
+.planet {
+    display: flex;
+    flex-direction: column;
+    line-height: 3rem;
+    &__description {
+      font-weight: 400;
+      padding-right: 20px;
+      text-align: right;
+      border-right: 2px solid;
+    }
+  
+    &__result {
+      font-weight: 300;
+      padding-left: 20px;
+    }
+  }

@@ -1,7 +1,12 @@
-import { NgModule } from '@angular/core';
+
 import { CommonModule } from '@angular/common';
-import { SidebarComponent, FooterComponent } from './components';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { FooterComponent, SidebarComponent } from './components';
+import { HttpTokenInterceptor } from './interceptors/http.token.interceptor';
+import { ApiService, JwtService, PlanetService } from './services';
+
 
 const COMPONENTS_LAYOUT = [
   SidebarComponent,
@@ -9,13 +14,21 @@ const COMPONENTS_LAYOUT = [
 ];
 
 @NgModule({
-  declarations: [
-    ...COMPONENTS_LAYOUT
-  ],
   imports: [
     CommonModule,
     RouterModule
   ],
-  exports: [...COMPONENTS_LAYOUT]
+  declarations: [
+    ...COMPONENTS_LAYOUT
+  ],
+  exports: [
+    ...COMPONENTS_LAYOUT
+  ],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: HttpTokenInterceptor, multi: true },
+    ApiService,
+    JwtService,
+    PlanetService
+  ],
 })
 export class CoreModule { }

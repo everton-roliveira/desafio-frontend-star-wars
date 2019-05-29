@@ -1,0 +1,17 @@
+@import '../../../../assets/scss/main';
+
+.container-btn-add {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+}
+.column-action {
+    width: 100px;
+    &__container {
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+    }
+
+}
+

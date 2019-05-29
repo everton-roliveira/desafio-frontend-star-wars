@@ -12,6 +12,11 @@ const routes: Routes = [
     path: 'game',
     component: AppComponent,
     loadChildren: './modules/game/game.module#GameModule',
+  },
+  {
+    path: 'planets',
+    component: AppComponent,
+    loadChildren: './modules/planet/planet.module#PlanetModule',
   }
 ];
 

@@ -1,0 +1,40 @@
+<section class="d-flex justify-content-center">
+  <section class="card">
+    <header class="card__header">
+      <h2>{{planet.name}}</h2>
+    </header>
+    <article class="card__body">
+
+      <ng-container *ngIf="planet; else notPlanet">
+        <div class="planet">
+          <div class="d-flex justify-content-center m-b-20">
+            <div class="planet__description">
+              <p>População</p>
+              <p>Clima</p>
+              <p>Terreno</p>
+
+            </div>
+            <div class="planet__result">
+              <p>{{planet.population}}</p>
+              <p>{{planet.climate}}</p>
+              <p>{{planet.terrain}}</p>
+            </div>
+          </div>
+          <div class="text-align-center">
+            <ng-container *ngIf="planet.films != null && planet.films > 0; else notFilm">
+              <p>Teve destaque em {{ planet.films }} filme(s)</p>
+            </ng-container>
+            <ng-template #notFilm>
+              <p>Não se destacou em nenhum filme</p>
+            </ng-template>
+          </div>
+        </div>
+      </ng-container>
+      <ng-template #notPlanet>
+        <div class="text-align-center">
+          <p>Não foi possivel carregar o Planeta!</p>
+        </div>
+      </ng-template>
+    </article>
+  </section>
+</section>
