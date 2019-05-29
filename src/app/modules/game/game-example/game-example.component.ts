@@ -11,7 +11,7 @@ import { Router, RouterStateSnapshot, ActivatedRoute } from '@angular/router';
 export class GameExampleComponent implements OnInit {
 
   public planet: PlanetModel = new PlanetModel();
-  @Input() idPlanet: string;
+  public loading: boolean;
 
   constructor(
     private _planetService: PlanetService,
@@ -20,8 +20,8 @@ export class GameExampleComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    let id = this._activeRoute.snapshot.params['id'];
-    console.log(id);
+    this.loading = true;
+    const id = this._activeRoute.snapshot.params.id;
     if (id) {
       this._planetService.get(id)
         .subscribe(
@@ -31,6 +31,7 @@ export class GameExampleComponent implements OnInit {
           error => {
             alert(error.message);
           },
+          () => this.loading = false
         );
     } else {
       alert('Não foi possivel obter o id do Planeta');
