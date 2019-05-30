@@ -50,48 +50,6 @@
           }
         }
       }
-
-      &:last-of-type {
-        margin-left: auto;
-      }
-    }
-
-    &__container-search {
-      align-items: center;
-      display: flex;
-      position: relative;
-
-      i {
-        position: absolute;
-        left: 7px;
-        top: 50%;
-        transform: translateY(-50%);
-        color: #aaa;
-        font-size: 0.81rem;
-      }
-
-      input {
-        width: 115px;
-        height: 30px;
-        padding: 0px 8px 0px 28px;
-        line-height: 25px;
-        border: 1px solid #101215;
-        background: $color-black-light;
-        color: #aaa;
-        -webkit-transition: all 200ms ease;
-        -moz-transition: all 200ms ease;
-        -ms-transition: all 200ms ease;
-        -o-transition: all 200ms ease;
-        transition: all 200ms ease;
-        -moz-border-radius: 0px;
-        -webkit-border-radius: 0px;
-        border-radius: 0px;
-        font-size: 0.81rem;
-
-        &:focus {
-          width: 300px;
-        }
-      }
     }
   }
 
