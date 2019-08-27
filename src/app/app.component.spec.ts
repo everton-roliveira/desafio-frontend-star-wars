@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'desafio-frontend-star-wars'`, () => {
+  it(`should have as title 'angular-docker'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('desafio-frontend-star-wars');
+    expect(app.title).toEqual('angular-docker');
   });
 
   it('should render title in a h1 tag', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to desafio-frontend-star-wars!');
+    expect(compiled.querySelector('h1').textContent).toContain('Welcome to angular-docker!');
   });
 });

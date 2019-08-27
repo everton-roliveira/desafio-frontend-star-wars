@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "desafio-frontend-star-wars": {
+    "angular-docker": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/desafio-frontend-star-wars",
+            "outputPath": "dist/angular-docker",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -67,18 +67,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "desafio-frontend-star-wars:build"
+            "browserTarget": "angular-docker:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "desafio-frontend-star-wars:build:production"
+              "browserTarget": "angular-docker:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "desafio-frontend-star-wars:build"
+            "browserTarget": "angular-docker:build"
           }
         },
         "test": {
@@ -112,7 +112,7 @@
         }
       }
     },
-    "desafio-frontend-star-wars-e2e": {
+    "angular-docker-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -121,11 +121,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "desafio-frontend-star-wars:serve"
+            "devServerTarget": "angular-docker:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "desafio-frontend-star-wars:serve:production"
+              "devServerTarget": "angular-docker:serve:production"
             }
           }
         },
@@ -141,5 +141,5 @@
       }
     }
   },
-  "defaultProject": "desafio-frontend-star-wars"
+  "defaultProject": "angular-docker"
 }

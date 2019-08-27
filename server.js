@@ -3,11 +3,11 @@ const path = require('path');
 const app = express();
 
 // Serve static files....
-app.use(express.static(__dirname + '/dist/desafio-frontend-star-wars'));
+app.use(express.static(__dirname + '/dist/angular-docker'));
 
 // Send all requests to index.html
 app.get('/*', function(req, res) {
-  res.sendFile(path.join(__dirname + '/dist/desafio-frontend-star-wars/index.html'));
+  res.sendFile(path.join(__dirname + '/dist/angular-docker/index.html'));
 });
 
 // default Heroku PORT

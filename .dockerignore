@@ -1,0 +1,13 @@
+.DS_Store
+.gitignore
+README.md
+env.*
+build/
+target/
+node_modules/
+.bundler/
+etc
+
+# To prevent storing dev/temporary container data
+*.csv
+/tmp/*

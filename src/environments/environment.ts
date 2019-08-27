@@ -6,7 +6,7 @@ export const environment = {
   version: '0.0.1',
   production: false,
 
-  api_url: 'https://desafio-star-wars-nodejs.herokuapp.com'
+  api_url: 'http://localhost:3000'
 };
 
 /*
